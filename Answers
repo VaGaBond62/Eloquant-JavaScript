@@ -121,6 +121,26 @@ function sum (arr){
   return result;
 }
 
+//Reversing an Array
+
+function reverseArray(j) {
+	var newArr = [];
+  	for(i = 0; i < j.length; i++) {
+  		var value = j[i];
+      	newArr.unshift(value);
+  }
+  return newArr;
+};
+
+function reverseArrayInPlace(arr) {
+	var temp;
+  	for(i = 0; i < arr.length / 2; i++) {
+  		temp = arr[i];
+      		arr[i] = arr[arr.length - 1 - i];
+      		arr[arr.length - 1 - i] = temp;
+  	}
+}
+
 // A list
 
 function arrayToList(arr){
