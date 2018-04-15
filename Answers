@@ -120,3 +120,71 @@ function sum (arr){
   }
   return result;
 }
+
+// A list
+
+function arrayToList(arr){
+
+  var index = arr.length - 1;
+  var node = null;
+  
+  while(index >= 0){
+    node = prepend(arr[index], node);
+    index = index - 1;
+  }
+  
+  return node;
+}
+
+function listToArray(list){
+  var arr = [];
+  
+  while(list !== null){
+    arr.push(list.value);
+    list = list.rest;
+  }
+  
+  return arr;
+}
+
+function prepend(value, rest){
+  return {
+    value: value,
+    rest: rest
+  };
+}
+
+function nth(list, n){
+  if(n < 0 || list === null){
+    return;
+  }
+  
+  while(list.rest !== null && n > 0){
+    list = list.rest;
+    n = n - 1;
+  }
+  
+  if(n === 0){
+    return list.value;
+  }
+}
+
+// Deep Comparison
+
+function deepEqual(a, b) {
+
+  if (a === b) {
+    return true;
+  }
+  
+  if (typeof a !== "object" || typeof b !== "object" || a === null || b === null || Object.keys(a).length !== Object.keys(b).length) {
+      return false;
+  } else {
+    for (var property in a) {
+		return deepEqual(a[property], b[property]);
+    }
+  }
+}
+
+(Chapter 5)
+
