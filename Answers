@@ -208,3 +208,20 @@ function deepEqual(a, b) {
 
 (Chapter 5)
 
+// Flattening
+
+let arrays = [[1, 2, 3], [4, 5], [6]];
+
+function flatten(arr) {
+    return arr.reduce(function (flat, toFlatten) {
+      return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+    }, []);
+  }
+  
+ // Your Own Loop
+ 
+ function loop(value, test, update, execute) {
+  if (!test(value)) return; // stop
+  execute(value);
+  return loop(update(value), test, update, execute);
+}
