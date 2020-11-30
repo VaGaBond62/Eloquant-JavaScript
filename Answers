@@ -1,10 +1,11 @@
 // (Chapter 2)
 
 // Looping a triangle
-var hash = '#';
-for(i=0;i<7;i++){
-  console.log(hash);
-  hash += '#';
+const calls = 7;
+let character = '#';
+for (let i = 0; i < calls; i++) {
+  console.log(character);
+  character += character[0];
 }
 
 //FizzBuzz
