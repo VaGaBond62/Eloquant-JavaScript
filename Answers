@@ -47,3 +47,20 @@ function min(num1, num2){
 }
 
 //Recursion
+
+function isEven(num){
+  if(num === 0) return true;
+  if(num === 1) return false;
+  if(num > 0) return isEven(num-=2);
+  else return isEven(num+=2);
+}
+
+//Bean Counter
+
+function countBs(str){
+ return str.split('').filter(e => e === 'B').length;
+}
+
+function countChar(str, charToCount){
+  return str.split('').filter(e => e === charToCount).length;
+}
